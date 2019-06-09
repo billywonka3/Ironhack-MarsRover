@@ -35,12 +35,10 @@ function moveForward(rover) {
     case "S": rover.y = y+1; break;
     case "W": rover.x = x-1; break;
   }
-  console.log("moveForward was called" + " You are at coordinate ('${x}','${y}')")
+  console.log("moveForward was called" + " You are at coordinate (${x},${y})")
 }
 
 // Command Input Function
-var input = get_string("Input commands: ");
-
 function getInput(input) {
   for (let i=0; i<String.length; i++) {
     switch(i) {

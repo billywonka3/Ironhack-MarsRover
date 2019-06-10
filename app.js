@@ -13,8 +13,9 @@ function turnLeft(rover) {
     case "W": rover.direction = "S"; break;
     case "S": rover.direction = "E"; break;
     case "E": rover.direction = "N"; break;
+    default : return "Try again" ; break;
   }
-  console.log("turnLeft was called!" + " You are now facing '${rover.direction}'.");
+  console.log(`turnLeft was called!` + ` You are now facing ${rover.direction}`);
 }
 
 function turnRight(rover) {
@@ -25,7 +26,7 @@ function turnRight(rover) {
     case "W": rover.direction = "N"; break;
     default : return "Try again" ; break;
   }
-  console.log("turnRight was called!" + " You are now facing '${rover.direction}'.");
+  console.log(`turnRight was called!` + ` You are now facing ${rover.direction}`);
 }
 
 function moveForward(rover) {
@@ -34,24 +35,25 @@ function moveForward(rover) {
     case "E": rover.x = x+1; break;
     case "S": rover.y = y+1; break;
     case "W": rover.x = x-1; break;
+    default : return "Try again" ; break;
   }
-  console.log("moveForward was called" + " You are at coordinate (${x},${y})")
+  console.log(`moveForward was called. ` + `You are at coordinate (${x},${y})`)
 }
 
 // Command Input Function
 function getInput(input) {
   for (let i=0; i<String.length; i++) {
-    switch(i) {
+    switch(input[i]) {
       case r: turnRight(rover); 
         break;
       case l: turnLeft(rover); 
         break;
       case f: moveForward(rover); 
-        rover.travelLog.push ['(x,y)']; 
+        rover.travelLog.push [(x,y)]; 
         break;
       default: console.log("Please enter a valid set of commands");
         break
     }
   }
-  console.log("Here is your Travel Log: ${travelLog[]}");
+  console.log(`Here is your Travel Log: ${travelLog[]}`);
 }
